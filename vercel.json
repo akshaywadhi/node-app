@@ -1,34 +1,19 @@
 {
+  
   "builds": [
     {
       "src": "server.js",
       "use": "@vercel/node"
-    },
-    {
-      "src": "build/**",
-      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/products",
-      "dest": "server.js"
+      "src": "/users.*",
+      "dest": "/server.js"
     },
     {
-      "src": "/products/(.*)",
-      "dest": "server.js"
-    },
-    {
-      "src": "/add",
-      "dest": "build/index.html"
-    },
-    {
-      "src": "/",
-      "dest": "build/index.html"
-    },
-    {
-      "src": "/(.+)",
-      "dest": "build/$1"
+      "src": "/.*",
+      "dest": "/server.js"
     }
   ]
 }
