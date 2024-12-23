@@ -13,17 +13,17 @@ app.use(express.static(path.resolve(__dirname , 'public', 'build')))
 
 
 
-// try{
-//   mongoose.connect(process.env.MONGO_URL)
-//   console.log('Connected To Database')
+try{
+  mongoose.connect(process.env.MONGO_URL)
+  console.log('Connected To Database')
  
-// }
-// catch(err){
-//   console.log(err)
-// }
+}
+catch(err){
+  console.log(err)
+}
 
 
 
 app.listen(process.env.PORT, (req,res) => {
-  console.log('Server Is Running On Port 3001')
+  console.log('Server Is Running On Port 8080')
 })
